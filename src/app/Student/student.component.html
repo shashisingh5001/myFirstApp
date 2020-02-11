@@ -1,0 +1,21 @@
+<h3>this is my students.component.html file</h3>
+<p>
+    This is student component
+</p>
+<label>First name:{{firstName}}</label>
+<label>Last name:{{lastName}}</label>
+<div>
+    Total : {{4 * 4}}
+</div>
+<div>
+    {{getTotalNumber()}}
+</div>
+<div style="background-color:lightblue">
+    <h3>This is a heading</h3>
+    <p>This is a paragraph.</p>
+</div>
+<div>
+    <input type="text" [(ngModel)]="firstName"/>
+    <button (click)="onSubmit()">submit</button>
+    <div>{{buttonClicked}}</div>
+</div>

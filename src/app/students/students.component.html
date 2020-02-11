@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 >List of Students</h1>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Marks</th>
+        <th>Total</th>
+        <th>Percentage</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stud of students" [ngStyle]="{'background-color':getBackgroundColor(stud)}">
+          <td>{{stud.id}}</td>
+          <td><button type="button" class="btn btn-link" (click)=selectStudent(stud)>{{stud.name}}</button></td>
+          <td>{{stud.email}}</td>
+          <td>{{stud.total}}</td>
+          <td>{{stud.marks}}</td>
+          <td>{{(stud.marks/stud.total)* 100| number}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div *ngIf="selectedStudent">
+  <h2 >You have selected:{{selectedStudent.name}}</h2>
+</div>
+<aap-student [updateStudent]="selectedStudent"></aap-student>
